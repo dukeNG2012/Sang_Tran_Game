@@ -19,9 +19,10 @@ public class GamePanel extends JPanel implements Runnable
     public final int screenHeight = tileSize * maxScreenRow;
 
     
-    //* this line wwill do some thing...... */
+    //* this line wwill do some thing  */
     Thread gameThread; 
     //? when we run this thread, it will automatic run the run method!
+    public CollisionChecker cChecker = new CollisionChecker(this);
     Player player = new Player(this, keyH);
 
     TileManager tileM = new TileManager(this);
@@ -78,13 +79,7 @@ public class GamePanel extends JPanel implements Runnable
                 repaint();
                 delta--;
             }
-            
-            
-            
-
-            
-
-            
+ 
         }
 
     }

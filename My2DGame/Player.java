@@ -1,5 +1,6 @@
 //import java.awt.Color;
 import java.awt.Graphics2D;
+import java.awt.Rectangle;
 //import java.awt.Image;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
@@ -13,6 +14,9 @@ public class Player extends entity {
     {
         this.gp = gp;
         this.keyH = keyH;
+
+
+        solidArea = new Rectangle(8,16,32, 32);
 
         setDefaultValues();
         getPlayerImage();
@@ -48,23 +52,45 @@ public class Player extends entity {
         {
             direction = "up";
             //System.out.println("pressed up!");
-            y -= speed;
+            //y -= speed;
             //PlayerX = PlayerY-PlayerSpeed;
         }
         else if(keyH.downPressed == true)
         {
             direction = "down";
-            y += speed;
+            //y += speed;
         }
         else if(keyH.leftPressed == true)
         {
             direction = "left";
-            x -= speed;
+            //x -= speed;
         }
         else if(keyH.rightPressed == true)
         {
             direction = "right";
-            x += speed;
+            //x += speed;
+        }
+        collision = false;
+        gp.cChecker.checkTile(this);
+
+        if(collision == false)
+        {
+            switch(direction)
+            {
+                case "up":
+                    y -= speed;
+                    break;
+                case "down":
+                    y += speed;
+                    break;
+                case "left":
+                    x -= speed;
+                    break;
+                case "right":
+                    x += speed;
+                    break;
+
+            }
         }
     }
     public void draw(Graphics2D g2)

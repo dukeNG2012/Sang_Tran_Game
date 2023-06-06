@@ -1,19 +1,20 @@
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
-
+/*
+ * This class takes key pressed.
+ * 
+ * 
+ */
 public class KeyHandler implements KeyListener {
 
     boolean upPressed, downPressed, leftPressed, rightPressed;
     @Override
     public void keyTyped(KeyEvent e) {
-        // TODO Auto-generated method stub
-        //throw new UnsupportedOperationException("Unimplemented method 'keyTyped'");
+        
     }
 
     @Override
     public void keyPressed(KeyEvent e) {
-        // TODO Auto-generated method stub
-        //throw new UnsupportedOperationException("Unimplemented method 'keyPressed'");
         
         int code = e.getKeyCode();
         if(code == KeyEvent.VK_W)
@@ -36,8 +37,7 @@ public class KeyHandler implements KeyListener {
 
     @Override
     public void keyReleased(KeyEvent e) {
-        // TODO Auto-generated method stub
-        //throw new UnsupportedOperationException("Unimplemented method 'keyReleased'");
+        
         int code = e.getKeyCode();
         if(code == KeyEvent.VK_W)
         {
